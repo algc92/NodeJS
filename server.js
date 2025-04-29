@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios');
+const axios = require('./node_modules/axios/index.d.cts');
 const app = express();
 
 app.use(express.json());
@@ -16,7 +16,7 @@ app.post('/preguntar', async (req, res) => {
       messages: [{ role: 'user', content: pregunta }],
     }, {
       headers: {
-        'Authorization': `Bearer TU_API_KEY`,
+        'Authorization': `Bearer ${SECRET}`,
         'Content-Type': 'application/json',
       }
     });
