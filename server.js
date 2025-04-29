@@ -13,7 +13,7 @@ app.post('/preguntar', async (req, res) => {
   try {
     const respuesta = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: pregunta }],
+      messages: [{ role: 'SAChat', content: pregunta }],
     }, {
       headers: {
         'Authorization': `Bearer ${SECRET}`,
